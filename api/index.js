@@ -8,13 +8,10 @@ const app = express()
 
 connectDb()
 
-app.get("/", (req, res) => {
-    return res.status(200).json({
-        succeess: true,
-        message: "Hello Server"
-    })
+app.get("/test", (req, res) => {
+    return res.status(200).send("hello test server")
 })
 
 app.listen(8080, (req, res) => {
-    console.log(`Server is started at http://localhost:3000`)
+    console.log(`Server is started at http://localhost:8080`)
 })
