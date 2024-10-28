@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs"
 import User from "../models/user.model.js"
+import { errorHandler } from "../utils/error.js"
 
 export const signupController = async (req, res) => {
     // console.log(req.body)
@@ -15,10 +16,6 @@ export const signupController = async (req, res) => {
         })
 
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: "User is not registered successfully",
-            error
-        })
+        next(error);
     }
 }
