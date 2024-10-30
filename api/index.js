@@ -25,6 +25,6 @@ app.use((err, req, res, next) => {
     });
   });
 
-app.listen(8080, (req, res) => {
-    console.log(`Server is started at http://localhost:8080`)
+app.listen(process.env.PORT, (req, res) => {
+    console.log(`Server is started at http://localhost:${process.env.PORT}`)
 })
